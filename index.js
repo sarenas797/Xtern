@@ -5,9 +5,17 @@ personForm.onsubmit = (ev) => {
     const form = ev.target
     const details = document.querySelector('.details')
 
-    const peronsName = form.personName.value
+    const personName = form.personName.value
+    const hairColor = form.hairColor.value
+
     const em = document.createElement('em')
-    em.textContent= personName
+    em.textContent = personName
+
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor = hairColor
+    colorDiv.style.height = '50px'
+    colorDiv.style.width = '100px'
 
     details.appendChild(em)
+    details.appendChild(colorDiv)
 }
