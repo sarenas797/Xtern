@@ -27,7 +27,7 @@ personForm.onsubmit = (ev) => {
     details.innerHTML = `
     <ul>
         <li>Name: ${personName}</li>
-        <li>Hair Color: ${colorDiv.outerHTMl}</li>
+        <li>Hair Color: ${colorDiv.outerHTML}</li>
         <li>Age; ${age} </li>
         <li>Birth Place ${birth} </li>
     </ul>
