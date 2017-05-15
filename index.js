@@ -7,6 +7,8 @@ personForm.onsubmit = (ev) => {
 
     const personName = form.personName.value
     const hairColor = form.hairColor.value
+    const birthPlace = form.birthplace.value
+    const age = form.age.value
 
     const em = document.createElement('em')
     em.textContent = personName
@@ -16,6 +18,19 @@ personForm.onsubmit = (ev) => {
     colorDiv.style.height = '50px'
     colorDiv.style.width = '100px'
 
-    details.appendChild(em)
-    details.appendChild(colorDiv)
+    const old = document.createElement('old')
+    old.textContent = age
+
+    const birth = document.createElement('birth')
+    birth.textContent = birthPlace
+
+    details.innerHTML = `
+    <ul>
+        <li>Name: ${personName}</li>
+        <li>Hair Color: ${colorDiv.outerHTMl}</li>
+        <li>Age; ${age} </li>
+        <li>Birth Place ${birth} </li>
+    </ul>
+    `
+
 }
