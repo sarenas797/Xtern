@@ -19,26 +19,33 @@ personForm.onsubmit = (ev) => {
     const birthPlace = form.birthplace.value
     const age = form.age.value
 
-    const em = document.createElement('em')
-    em.textContent = personName
+    const name = document.createElement('li')
+    name.textContent = "Name: " + personName
+
+    const hair = document.createElement("li")
+    hair.textContent="Hair Color: "
 
     const colorDiv = renderColor(hairColor)
 
-    const old = document.createElement('old')
-    old.textContent = age
+    const old = document.createElement('li')
+    old.textContent ="Age: " + age
 
-    const birth = document.createElement('birth')
-    birth.textContent = birthPlace
+    const birth = document.createElement('li')
+    birth.textContent ="Birthplace: " + birthPlace
 
-    details.innerHTML = `
-    <ul>
-        <li>Name: ${personName}</li>
-        <li>Hair Color: ${colorDiv.outerHTML}</li>
-        <li>Age: ${age} </li>
-        <li>Birth Place: ${birthPlace} </li>
-    </ul>
-    `
 
-    //personForm.addEventListener('submit', handleSubmit)
+    details.appendChild(name)
+    details.appendChild(hair)
+    details.appendChild(colorDiv)
+    details.appendChild(old)
+    details.appendChild(birth)
 
+    //details.innerHTML = `
+    //<ul>
+        //<li>Name: ${personName}</li>
+        //<li>Hair Color: ${colorDiv.outerHTML}</li>
+        //<li>Age: ${age} </li>
+        //<li>Birth Place: ${birthPlace} </li>
+    //</ul>`
 }
+    personForm.addEventListener('submit', handleSubmit)
